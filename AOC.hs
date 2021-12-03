@@ -14,7 +14,7 @@ Portability : POSIX
 
 AOC is a library of useful functions for solving coding problems.
 
-It accompanies a [video series](https://www.youtube.com/playlist?list=TODO)
+It accompanies a [video series](https://www.youtube.com/playlist?list=PLDRIsR-OaZkzqqyss1B01G_7RWuXnUeb5)
 describing how to solve the [2021 Advent of Code challenges](https://www.adventofcode.com/2021).
 It is intended as a learning tool for beginner and intermediate Haskellers, so
 often goes into some depth describing Haskell concepts, tools, and library
@@ -640,3 +640,12 @@ s1 (x, _, _, _) = x
 s2 (_, x, _, _) = x
 s3 (_, _, x, _) = x
 s4 (_, _, _, x) = x
+
+-- |'Num' instance for 'Maybe' 'Num's
+instance Num a => Num (Maybe a) where
+  x * y       = (*) <$> x <*> y
+  x + y       = (+) <$> x <*> y
+  abs         = (abs <$>)
+  signum      = (signum <$>)
+  fromInteger = (Just . fromInteger)
+  negate      = (negate <$>)
