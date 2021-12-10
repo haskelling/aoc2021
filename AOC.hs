@@ -22,7 +22,7 @@ functions.
 
 The code for this module along with the 2021 AoC solutions can be cloned from [GitHub](https://github.com/haskelling/aoc2021).
 -}
-module AOC(module Prelude, module AOC, module Text.Parsec, module Data.Vector, module Data.Char, module Data.List, module Data.List.Split, module Data.List.Extra, module Data.Hashable, module Data.Maybe, module Data.Either, module Data.Bool, module Control.Monad, module Text.Parsec.Expr, module Control.Arrow) where
+module AOC(module Prelude, module AOC, module Text.Parsec, module Data.Vector, module Data.Char, module Data.List, module Data.List.Split, module Data.List.Extra, module Data.Hashable, module Data.Maybe, module Data.Either, module Data.Bool, module Control.Monad, module Text.Parsec.Expr, module Control.Arrow, module Data.Ord) where
 
 import           Control.Arrow
 import           Control.Exception     (ArithException (..))
@@ -41,6 +41,7 @@ import qualified Data.Map              as M
 import           Data.Map.Merge.Strict
 import qualified Data.Map.Strict       as MS
 import           Data.Maybe
+import           Data.Ord
 import qualified Data.Set              as S
 import           Data.Tuple
 import           Data.Vector           (Vector, imap)

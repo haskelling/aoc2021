@@ -1,6 +1,6 @@
 MAKEFLAGS += --silent
 FLAGS = -O2
-HFLAGS = $(FLAGS) -rtsopts -v0 -XNoImplicitPrelude -XTupleSections -XBangPatterns
+HFLAGS = $(FLAGS) -rtsopts -v0 -XNoImplicitPrelude -XTupleSections -XBangPatterns -XTypeApplications
 DONE1 = $(wildcard [1-9][ab].hs)
 DONE2 = $(wildcard [12][0-9][ab].hs)
 GHCCOMMAND = $(shell command -v ghc)
