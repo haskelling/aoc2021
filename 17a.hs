@@ -2,11 +2,6 @@ import AOC
 
 main = interact' f
 
-integer' = do
-  s <- (char '-' >> return (-1)) <|> return 1
-  i <- integer
-  return $ s * i
-
 p = do
   string "target area: x="
   x1 <- integer'

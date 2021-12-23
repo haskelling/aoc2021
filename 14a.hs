@@ -10,8 +10,6 @@ p = do
   x3 <- anyChar
   return ((x1, x2), x3)
 
-histo = map (head &&& length) . group . sort
-
 f [[s], ts] = snd (last h) - snd (head h)
   where
     ts' = parselist p ts

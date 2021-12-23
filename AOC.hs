@@ -148,6 +148,11 @@ enump = choice $ map sr [minBound :: b .. maxBound :: b]
 integer :: Parser Int
 integer = read <$> many1 digit
 
+integer' = do
+  s <- (char '-' >> return (-1)) <|> return 1
+  i <- integer
+  return $ s * i
+
 -- ** Reading
 
 -- |The 'readBin' function reads a binary number from a String.
@@ -212,6 +217,9 @@ count :: Eq a
       -> [a] -- ^ The list to look in
       -> Int -- ^ The number of times the value is found in the list
 count c = length . filter (==c)
+
+histo :: Ord a => [a] -> [(a, Int)]
+histo = map (head &&& length) . group . sort
 
 -- |The 'tr' function translates lists according to a given mapping.
 --
@@ -611,6 +619,7 @@ rotn n = rot . rotn ((n - 1) `mod` 4)
 -- 7
 --
 manhattan (x, y) = abs x + abs y
+manhattan3 (x, y, z) = abs x + abs y + abs z
 
 -- *** 3-D space
 
